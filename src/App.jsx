@@ -1,5 +1,6 @@
 import Logo, { Mark } from "./components/Logo.jsx";
 import Icon from "./components/Icon.jsx";
+import MobileMenu from "./components/MobileMenu.jsx";
 import { brand, nav, hero, chooseList, services, stats, certs, about, work } from "./content.js";
 
 const Btn = ({ href, kind = "peach", children, ...rest }) => (
@@ -14,6 +15,7 @@ function Header() {
   return (
     <header className="site">
       <div className="wrap">
+        <MobileMenu links={nav} phone={brand.phone} phoneHref={brand.phoneHref} ctaHref="#inspection" ctaLabel="Get a Free Inspection" />
         <Logo />
         <nav aria-label="Primary">
           {nav.map((n) => <a key={n.href} href={n.href} aria-current={n.current ? "page" : undefined}>{n.label}</a>)}
